@@ -1,7 +1,11 @@
-import { Stack } from "expo-router";
+// src/app/(unauthenticated)/_layout.tsx
+import { Stack } from 'expo-router';
 
-export default function AuthLayout() {
+export default function UnauthenticatedLayout() {
   return (
-    <Stack/>
-  )
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="login" />
+      <Stack.Screen name="register" />
+    </Stack>
+  );
 }

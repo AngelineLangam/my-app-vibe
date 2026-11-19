@@ -1,13 +1,12 @@
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native';
 
-interface BtnProps extends TouchableOpacityProps {
-    label: string
-}
-
-export default function Button({label, ...props}: BtnProps) {
+export default function Button({ label, onPress, className }: any) {
   return (
-    <TouchableOpacity className='h-14 bg-blue-500 items-center justify-center' {...props}>
-        <Text className='text-white uppercase text-xl font-extrabold'>{label}</Text>
+    <TouchableOpacity 
+      onPress={onPress}
+      className={`w-full bg-black rounded-xl py-3 items-center justify-center ${className}`}
+    >
+      <Text className="text-white font-semibold text-base">{label}</Text>
     </TouchableOpacity>
-  )
+  );
 }
